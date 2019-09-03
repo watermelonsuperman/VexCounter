@@ -1,18 +1,21 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <counter v-for="n in 5" v-bind:key="n" v-bind:index="n"/>
+    sum:{{this.$store.getters.getSum}}
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import counter from './components/counter.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    counter
   }
+  
 }
 </script>
 
